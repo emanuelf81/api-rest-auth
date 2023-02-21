@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "77e83ee5-05f9-4325-9ab2-428cc7e43bb0",
+		"name": "API-REST-AUTH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24611576"
+	},
+	"item": [
+		{
+			"name": "Run seed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/seed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"seed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"test4@google.com\",\r\n  \"password\": \"Abc123\",\r\n  \"fullName\": \"test 4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test1@google.com\",\r\n    \"password\": \"Abc123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Status User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY3NzllZjY5LWQxNTYtNDJhOS1iYzkyLWQwYzRhYTY2MjRkMyIsImlhdCI6MTY3NjkwNjc3OCwiZXhwIjoxNjc2OTEzOTc4fQ.pSklg8qgJ2-rvkMpbSOWxNBC6RHpbG8g_M6ZzG3aUEY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/auth/check-status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"check-status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY3NzllZjY5LWQxNTYtNDJhOS1iYzkyLWQwYzRhYTY2MjRkMyIsImlhdCI6MTY3NjkwNjc3OCwiZXhwIjoxNjc2OTEzOTc4fQ.pSklg8qgJ2-rvkMpbSOWxNBC6RHpbG8g_M6ZzG3aUEY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/auth/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM3MzRmYmZkLTkzYWQtNDIxNy1hMTFkLTQ0YTg0ODU2Nzg1YiIsImlhdCI6MTY3NjkxNDEzMywiZXhwIjoxNjc2OTIxMzMzfQ.BghbkO-dOtWTb-hm3_aBa_aIyv2Uj_pgskZH3HLznB8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"3734fbfd-93ad-4217-a11d-44a84856785b\",\r\n    \"email\": \"test2@google.com\",\r\n    \"fullName\": \"Test2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/3734fbfd-93ad-4217-a11d-44a84856785b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"3734fbfd-93ad-4217-a11d-44a84856785b"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
