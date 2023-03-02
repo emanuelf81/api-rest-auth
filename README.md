@@ -17,10 +17,12 @@ $ yarn install
 ```
 
 3-Clone the `.env.template` file and rename it to `.env`.
-4-Change environment variables.
-5-Raise the database.
-6-Run:
 
+4-Change environment variables.
+
+5-Raise the database.
+
+6-Run:
 ```
 $ yarn start:dev
 ```
